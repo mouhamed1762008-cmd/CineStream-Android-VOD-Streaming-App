@@ -7,6 +7,14 @@ on:
         description: "Patch build label"
         required: false
         default: "patch"
+  push:
+    branches: [main]
+    paths:
+      - 'app/**'
+      - '*.gradle'
+      - '*.gradle.kts'
+      - 'gradle/**'
+      - '.github/workflows/android-patch-release.yml'
 
 permissions:
   contents: read
