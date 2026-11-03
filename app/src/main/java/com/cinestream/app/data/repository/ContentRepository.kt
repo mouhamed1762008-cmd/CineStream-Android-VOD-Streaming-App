@@ -198,6 +198,47 @@ object ContentRepository {
 
         // ================= SERIES =================
 
+        // TV Show - Channel 4 Original
+        ContentItem(
+            id = "series_channel_4",
+            title = "Channel 4 TV Shows",
+            type = ContentType.SERIES,
+            overview = "Explore hit TV series, critically acclaimed dramas, comedy specials, and groundbreaking television productions from Channel 4's premier entertainment lineup.",
+            releaseYear = 2024,
+            rating = 9.4,
+            ageRating = "16+",
+            duration = "4 Seasons",
+            genres = listOf("Drama", "Comedy", "Thriller", "Action"),
+            posterUrl = "https://jsldqjosjgsbyptnyzsd.supabase.co/storage/v1/object/public/tv%20shows/channels4_profile.jpg",
+            backdropUrl = "https://jsldqjosjgsbyptnyzsd.supabase.co/storage/v1/object/public/tv%20shows/channels4_profile.jpg",
+            videoUrl = VIDEO_TEARS_OF_STEEL,
+            director = "Channel 4 Productions",
+            cast = sampleCast,
+            isFeatured = true,
+            isTrending = true,
+            isTopRated = true,
+            isRecentlyAdded = true,
+            seasons = listOf(
+                Season(
+                    seasonNumber = 1,
+                    title = "Season 1: Primetime Premieres",
+                    episodes = listOf(
+                        Episode("c4_s1_e1", 1, 1, "Pilot Broadcast", "48m", "The launch episode of the groundbreaking new drama series showcasing top television talent.", "https://jsldqjosjgsbyptnyzsd.supabase.co/storage/v1/object/public/tv%20shows/channels4_profile.jpg", VIDEO_TEARS_OF_STEEL),
+                        Episode("c4_s1_e2", 2, 1, "Behind the Headlines", "52m", "An undercover exposé tests alliances and reveals high-stakes intrigue.", "https://jsldqjosjgsbyptnyzsd.supabase.co/storage/v1/object/public/tv%20shows/channels4_profile.jpg", VIDEO_FOR_BIGGER_BLAZES),
+                        Episode("c4_s1_e3", 3, 1, "The Midnight Transmission", "45m", "An unexpected breakthrough broadcast captivates millions across the nation.", "https://jsldqjosjgsbyptnyzsd.supabase.co/storage/v1/object/public/tv%20shows/channels4_profile.jpg", VIDEO_FOR_BIGGER_ESCAPES)
+                    )
+                ),
+                Season(
+                    seasonNumber = 2,
+                    title = "Season 2: New Horizons",
+                    episodes = listOf(
+                        Episode("c4_s2_e1", 1, 2, "Golden Hour", "50m", "The second season kicks off with higher stakes, sharper humor, and gripping storylines.", "https://jsldqjosjgsbyptnyzsd.supabase.co/storage/v1/object/public/tv%20shows/channels4_profile.jpg", VIDEO_SINTEL),
+                        Episode("c4_s2_e2", 2, 2, "The Grand Finale", "56m", "A gripping conclusion that leaves audiences on the edge of their seats.", "https://jsldqjosjgsbyptnyzsd.supabase.co/storage/v1/object/public/tv%20shows/channels4_profile.jpg", VIDEO_ELEPHANTS_DREAM)
+                    )
+                )
+            )
+        ),
+
         // Series 1 - Cyberpunk Mystery
         ContentItem(
             id = "series_1",
@@ -214,7 +255,7 @@ object ContentRepository {
             videoUrl = VIDEO_TEARS_OF_STEEL,
             director = "Alex Garland",
             cast = sampleCast,
-            isFeatured = true,
+            isFeatured = false,
             isTrending = true,
             isTopRated = true,
             seasons = listOf(
@@ -385,6 +426,6 @@ object ContentRepository {
     }
 
     val TRENDING_SEARCH_KEYWORDS = listOf(
-        "Sci-Fi", "Cyberpunk", "Denis Villeneuve", "Action 2024", "Animation", "Christopher Nolan", "Dragon", "Tokyo Expressway"
+        "Channel 4", "TV Shows", "Sci-Fi", "Cyberpunk", "Denis Villeneuve", "Action 2024", "Animation", "Christopher Nolan"
     )
 }
