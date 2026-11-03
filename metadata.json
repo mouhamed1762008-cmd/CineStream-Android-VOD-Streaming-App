@@ -1,0 +1,6 @@
+{
+  "name": "CineStream",
+  "description": "Modern premium Android VOD streaming platform with dark aesthetic, curated HD movies and series, and Media3 ExoPlayer integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
