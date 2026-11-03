@@ -30,6 +30,20 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
 
+      - name: Create temporary signing key
+        shell: bash
+        run: |
+          keytool -genkeypair -v \
+            -keystore "$RUNNER_TEMP/cinestream-temporary-upload.jks" \
+            -storepass "temporary-build-only-password" \
+            -keypass "temporary-build-only-password" \
+            -alias upload \
+            -keyalg RSA -keysize 2048 -validity 10000 \
+            -dname "CN=CineStream Build, OU=Android, O=CineStream, L=Unknown, ST=Unknown, C=DZ"
+          echo "KEYSTORE_PATH=$RUNNER_TEMP/cinestream-temporary-upload.jks" >> "$GITHUB_ENV"
+          echo "STORE_PASSWORD=temporary-build-only-password" >> "$GITHUB_ENV"
+          echo "KEY_PASSWORD=temporary-build-only-password" >> "$GITHUB_ENV"
+
       - name: Build release APK
         run: gradle --no-daemon assembleRelease
 
